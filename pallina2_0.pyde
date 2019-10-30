@@ -15,9 +15,10 @@ def setup ():
 def draw():
     global versx,versy,xpall,ypall,raggio,x,y,xrett1,xrett2,altezzarett1,punti1,punti2,versx, versy
     background(0, 0, 0)
+    fill(255,255,255)
     ellipse (x,y,20,20)
     x=x+(3*versx)
-    y=y+(3*versy)
+    y=y+(3*versy)    
     if y>=altezzarett1-(20/2) and (x+(20/2)>xrett1 and x-(20/2)<xrett1+80):
         versy*=-1
     if y<=altezzarett2+35 and (x+(20/2)>xrett2 and x-(20/2)<xrett2+80):
@@ -40,26 +41,31 @@ def draw():
         xrett2*=-1
     if punti1>=100:
         textSize(50)
+        fill(255,0,0)
         text("Giocatore 1 vince", 100,200)
         delay(1000)
     if punti2>=100:
          textSize(50)
+         fill(0,0,255)
          text("Giocatore 2 vince", 100,200)
          delay(1000)
 
     fill (255 )
     textSize ( 30 )
+    fill(0,0,255)
     text ( punti2, 0,30 )
     fill (255 )
     textSize ( 30 )
+    fill(255,0,0)
     text ( punti1, 10,400 )
   
-    
+    fill(255,0,0)
     rect(xrett1,altezzarett1,80,25)
+    fill(0,0,255)
     rect(xrett2,altezzarett2,80,25)
 
 def keyPressed():
-    global xrett1, versx,xrett2, testo1, testo2
+    global xrett1, versx,xrett2
     if keyCode == LEFT:
         xrett1=xrett1-25
     if keyCode == RIGHT:
