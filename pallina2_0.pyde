@@ -13,7 +13,7 @@ def setup ():
      size(600,400)
      
 def draw():
-    global versx,versy,xpall,ypall,raggio,x,y,xrett1,xrett2,altezzarett1,punti1,punti2
+    global versx,versy,xpall,ypall,raggio,x,y,xrett1,xrett2,altezzarett1,punti1,punti2,versx, versy
     background(0, 0, 0)
     ellipse (x,y,20,20)
     x=x+(3*versx)
@@ -30,9 +30,6 @@ def draw():
         punti1=punti1+10
     if y>=height:
         punti2=punti2+10
-    
-
-        
     if xrett2>=width-50:
         xrett2=xrett2-50
     if xrett1>=width-50:
@@ -41,10 +38,18 @@ def draw():
         xrett1*=-1
     if xrett2<0:
         xrett2*=-1
+    if punti1>=100:
+        textSize(50)
+        text("Giocatore 1 vince", 100,200)
+        delay(1000)
+    if punti2>=100:
+         textSize(50)
+         text("Giocatore 2 vince", 100,200)
+         delay(1000)
 
     fill (255 )
     textSize ( 30 )
-    text ( punti2, 10,30 )
+    text ( punti2, 0,30 )
     fill (255 )
     textSize ( 30 )
     text ( punti1, 10,400 )
