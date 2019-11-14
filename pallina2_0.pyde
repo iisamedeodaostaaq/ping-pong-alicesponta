@@ -1,4 +1,5 @@
-x=80
+## Prof. Inserire QUI il significato di queste variabili globali
+x=80    
 y=80
 xrett1=0
 xrett2=0
@@ -18,7 +19,9 @@ def draw():
     background(0, 0, 0)
     fill(255,255,255)
     ellipse (x,y,20,20)
-    #X ed Y daranno il verso alla pallina
+## Prof. Si poteva rendere anche il diametro della pallina una costante da riferire poi nel codice
+    #X ed Y daranno il verso alla pallina 
+## Prof.  In effetti rappresentano le coordinate della pallina
     x=x+(3*versx)
     y=y+(3*versy)
     #Se la pallina tocca la prima racchetta 
@@ -43,10 +46,13 @@ def draw():
     if y>=height:
         punti2=punti2+10
     #Eseguo un controllo per far si che il rettangolo non esca dalla finestra
+## Prof. La racchetta è larga 80. Se supero il limite, semplicemebte non incremento la posizione della racchetta
+## Prof. Come è stato fatto, crea un rimbalzo della racchetta sui bordi
     if xrett2>=width-50:
         xrett2=xrett2-50
     if xrett1>=width-50:
         xrett1=xrett1-50
+## Prof. ??? non capisco questa inversione dell'ascissa delle racchette
     if xrett1<0:
         xrett1*=-1
     if xrett2<0:
